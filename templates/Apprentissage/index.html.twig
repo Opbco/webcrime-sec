@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Apprentissage!{% endblock %}
+
+{% block body %}
+    <div {{ react_component('Apprentissage', { 'current': apprentissage }) }}></div>
+{% endblock %}
+

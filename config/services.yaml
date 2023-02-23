@@ -1,0 +1,64 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+    locale: en
+    locales: en|fr
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    GetData: '@App\Service\GetData'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+    
+    #sonata admin services
+    admin.stade:
+        class: App\Admin\StadeAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Entity\Stade, manager_type: orm, group: Settings, label: Stades }
+
+    admin.niveau:
+        class: App\Admin\NiveauAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Entity\Niveau, manager_type: orm, group: Settings, label: Niveaux }
+
+    admin.apprentissage:
+        class: App\Admin\ApprentissageAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Entity\Apprentissage, manager_type: orm, group: Settings, label: Apprentissages }
+
+    admin.question:
+        class: App\Admin\QuestionAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Entity\Question, manager_type: orm, group: Settings, label: Questions }
+
+    admin.response:
+        class: App\Admin\ResponseAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Entity\Response, manager_type: orm, group: Settings, label: Responses }
+
+    admin.prerequis:
+        class: App\Admin\PrerequisAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Entity\Prerequis, manager_type: orm, group: Settings, label: Prerequis }
+
+    admin.progression:
+        class: App\Admin\ProgressionAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Entity\Progression, manager_type: orm, group: 'sonata_user', icon: "<i class='fa fa-users'></i>", label: Progressions, translation_domain: 'SonataUserBundle' }

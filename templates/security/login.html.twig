@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% set errorm = "" %}
+{% block title %}Log in!{% endblock %}
+
+{% block body %} 
+    {% if error %}
+        {% set errorm =  error.messageKey|trans(error.messageData, 'security') %}
+    {% endif %}
+    <div {{ react_component('LoginForm', { 'last_username': last_username, 'error': errorm, 'csrf_token': csrf_token('authenticate') }) }}></div>
+{% endblock %}

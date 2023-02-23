@@ -1,0 +1,32 @@
+
+
+.tab-header{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: var(--size-1);
+    margin: 1rem auto;
+}
+
+.tab-header .tabs-option{
+    flex: 1 0 200px;
+    background-color: var(--bg-header);
+    border-radius: 500px;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.3rem 1rem;
+}
+
+.tab-header .tabs-option.selected{
+    background-color: var(--clr-header-light);
+    border: 1px solid var(--bg-header);
+    color: var(--red-7);
+}
+
+.tab-header span{
+    color: var(--gray-1); 
+}
+
+.tab-header span:hover{
+    color: var(--red-7);
+}

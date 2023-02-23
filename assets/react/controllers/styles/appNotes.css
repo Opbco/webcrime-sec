@@ -1,0 +1,70 @@
+.app-notes{
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--size-3);
+    align-items: center;
+    margin-left: 4px;
+    padding: 0px 1rem 1rem;
+    height: auto;
+	border-radius: 10px;
+	background: linear-gradient(to bottom, var(--clr-header-light), var(--bg-header));
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	z-index: 1;
+	overflow: hidden;
+}
+
+/* head */
+.app-notes .head {
+	padding: 20px 16px;
+	color: snow;
+	font-size: 20px;
+	text-align: center;
+}
+.app-notes .head h1 {
+	display: inline-block;
+	margin-left: 4px;
+}
+
+.app-list-note + .app-list-note{
+    margin-top: 2px;
+}
+
+.app-list-note{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--gray-1);
+    background-color: var(--gray-3);
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    padding: 0.3rem;
+}
+
+.app-list-note :where(a, a:visited, a:link){
+    text-decoration: none;
+    color: black;
+}
+
+.app-list-note.passed{
+    background-color: var(--clr-header-light);
+}
+
+.app-list-note.current{
+    background-color: var(--bg-header);
+}
+
+.app-list-note.current a{
+    color: var(--gray-1);
+}
+
+.app-list-note:hover{
+    box-shadow: var(--shadow-3);
+    transform: scale(1.05);
+}
+
+.app-list-note_footer{
+    margin-top: 1rem;
+    font-size: 0.6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

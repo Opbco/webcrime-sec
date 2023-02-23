@@ -1,0 +1,171 @@
+@import "./open-props.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
+
+:root {
+  --clr-header-light: hsla(219, 100%, 15%, 0.4);
+  --bg-header: hsl(219, 100%, 15%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--gray-1);
+  font-family: Gloock, sans-serif, system-ui;
+}
+
+.main-container {
+  margin: 0px auto 0px;
+  background-color: var(--gray-0);
+  min-height: 100vh;
+}
+
+#lessons, #leader-board {
+  width: 250px;
+}
+
+.class-room {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--size-3);
+  padding: 20px 0px;
+  width: 99%;
+}
+
+.stackV {
+  display: flex;
+  flex-direction: column;
+}
+.stackHB {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading-h1 {
+  background: linear-gradient(
+    to right,
+    hsl(120, 94%, 13%),
+    red 40%,
+    yellow 70%
+  );
+  background-clip: text;
+  align-self: center;
+  color: transparent;
+  text-transform: capitalize;
+  line-height: 2.1rem;
+  letter-spacing: 0.1rem;
+}
+
+.card-form {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1rem;
+  border-radius: 2rem;
+  box-shadow: var(--shadow-3);
+}
+
+.btn-gradient {
+  padding: 0.6rem 0.8rem;
+  border: none;
+  border-radius: 1000px;
+  flex: 1;
+  background: linear-gradient(60deg, red, green);
+  color: var(--gray-0);
+  font-weight: var(--font-weight-7);
+  font-size: var(--font-size-3);
+  cursor: pointer;
+  transition: background 300ms ease-in-out;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(300deg, green, yellow);
+}
+
+/*registration form */
+.app_register-container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-header);
+}
+
+.app_register-form {
+  gap: var(--size-3);
+}
+
+.app_register-form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.app_register-form ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0.7em 0em 0.2em;
+  border: none;
+  background-color: transparent;
+  color: red;
+}
+
+.app_register-form ul li {
+  list-style: none;
+  font-size: var(--font-size-00);
+}
+
+input:not([type="checkbox"]),
+select {
+  padding: 0.4rem;
+  border: none;
+  width: 100%;
+  background-color: var(--gray-3);
+  border-radius: 10px;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  outline: solid 2px var(--yellow-7);
+}
+
+input:invalid,
+select:invalid {
+  outline: solid 2px var(--red-6);
+  animation: shake-x 300ms alternate;
+  animation-iteration-count: 6;
+}
+
+input:valid,
+select:valid {
+  outline: solid 2px var(--green-7);
+}
+
+.banner{
+  padding: var(--size-1) var(--size-8);
+}
+
+@media screen and (max-width: 600px) {
+  .class-room {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--size-3);
+    padding: 20px 0px;
+    width: 100%;
+  }
+  #lessons, #leader-board {
+    width: 100%;
+  }
+
+  .banner{
+    padding: 12px 2px;
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block styles %}
+            
+        {% endblock %}
+    </head>
+    <body>
+        {% if app.user %}<div {{ react_component('Banner', { 'email': app.user.email, 'username': app.user.username, 'age': app.user.age, 'level': app.user.levelName, 'levels': getData.getNiveaux(), 'progression': app.user.progression|serialize('json', { groups: 'progression'}) }) }}></div>{% endif %}
+        
+        <main class="main-container {% if app.user %}class-room{% endif %} "> 
+            <aside id="lessons">
+                {% if app.user %}<div {{ react_component('ListLessons', { 'lessons': getData.getApprentissages(), 'progression': app.user.progression|serialize('json', { groups: 'progression'}), 'current':current is defined ? current : 0 }) }}></div>{% endif %}
+            </aside>
+            <div id="content">
+                {% block body %}{% endblock %}
+            </div>
+            <aside id="leader-board">
+                {% if app.user %}<div {{ react_component('LeaderBoard', { 'progressions': getData.getProgressions() }) }}></div>{% endif %}
+            </aside>
+        </main>
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

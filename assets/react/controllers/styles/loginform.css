@@ -1,0 +1,23 @@
+
+.form-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--bg-header);
+}
+
+.form-container form > .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.alert{
+  padding: 1em;
+  border: none;
+  border-radius: 12px;
+} 
+.alert.alert-danger{
+  background-color: hsla(357, 95%, 50%, 0.116);
+  color: red;
+}

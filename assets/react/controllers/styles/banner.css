@@ -1,0 +1,120 @@
+
+.banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    position: fixed;
+    color: var(--gray-1);
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-header);
+    z-index: 50;
+}
+
+.banner .user{
+    display: flex;
+    column-gap: var(--size-3);
+}
+
+.user-logout> a{
+    position: relative;
+    text-decoration: none;
+    color: var(--orange-4);
+}
+
+.user-logout> a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: var(--size-1);
+    background-color: var(--red-7);
+    transform-origin: center;
+    transform: scale(0);
+    transition: transform 400ms var(--ease-elastic-2);
+    bottom: -15%;
+    right: 0;
+    left: 0;
+}
+
+.user-logout> a:hover::after{
+    transform: scale(1);
+}
+
+.user-logout> a:hover{
+    color: var(--red-9);
+}
+
+.logo{
+    display: flex;
+    column-gap: var(--size-3);
+    align-items: center;
+}
+
+.logo-img > img{
+    width: 60px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.user-details span{
+    color: var(--green-4);
+}
+
+.progress-bar{
+    margin: 90px auto 20px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: var(--size-1);
+}
+
+.progress-bar .progress-step{
+    flex:1;
+    background-color: var(--gray-4);
+    height: var(--size-3);
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-bar .progress-step.passed{
+    background-color: var(--clr-header-light);
+}
+
+.progress-bar .progress-step.current{
+    background-color: var(--bg-header);
+}
+
+.progress-bar .progress-step.current::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    aspect-ratio: 1;
+    transform: translateX(-50%);
+    width: 30%;
+    background-color: var(--bg-header);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.progress-bar .progress-step::after{
+    position: absolute;
+    top: -100%;
+    right: -50%;
+    content: attr(data-label);
+    width: max-content;
+    height: min-content;
+    text-align: justify;
+    color: var(--gray-0);
+    font-size:  var(--font-size-0);
+    opacity: 0;
+    background-color: var(--bg-header);
+    transition: opacity 200ms ease-in-out;
+}
+
+.progress-bar .progress-step:hover::after{
+    opacity: 1;
+}
+
