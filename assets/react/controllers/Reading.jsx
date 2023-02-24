@@ -6,16 +6,16 @@ export class RawHtml extends PureComponent {
   }
   render() {
     const {children, className = ""} = this.props;
-    return <div className={className} dangerouslySetInnerHTML={{ __html: children.replace(/\n/g, '<br />')}} />;
+    return <div className={className} dangerouslySetInnerHTML={{ __html: children}} />;
   }
 }
 
 const Reading = ({ title, contenu }) => {
   return (
-    <div>
+    <>
       <h2 style={{ textAlign: "center", marginBlock: 12 }}>{title}</h2>
       <RawHtml>{contenu}</RawHtml>
-    </div>
+    </>
   );
 };
 

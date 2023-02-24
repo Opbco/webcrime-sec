@@ -7,7 +7,7 @@
     padding: 0px 1rem 1rem;
     height: auto;
 	border-radius: 10px;
-	background: linear-gradient(to bottom, var(--clr-header-light), var(--bg-header));
+	background: linear-gradient(to bottom, var(--bg-header) 15%, var(--clr-header-light));
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	z-index: 1;
 	overflow: hidden;

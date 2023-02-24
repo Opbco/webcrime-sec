@@ -27,6 +27,6 @@
     color: var(--gray-1); 
 }
 
-.tab-header span:hover{
+.tab-header .tabs-option:hover span{
     color: var(--red-7);
 }

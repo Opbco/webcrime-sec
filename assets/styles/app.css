@@ -1,10 +1,10 @@
 @import "./open-props.min.css";
 @import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
-@import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,300;1,600;1,700;1,900&display=swap');
 :root {
   --clr-header-light: hsla(219, 100%, 15%, 0.4);
   --bg-header: hsl(219, 100%, 15%);
+  --clr-secondary: hsl(7, 94%, 66%);
 }
 
 *,
@@ -16,7 +16,7 @@
 
 body {
   background-color: var(--gray-1);
-  font-family: Gloock, sans-serif, system-ui;
+  font-family: 'Labrada', serif;
 }
 
 .main-container {

@@ -10,7 +10,7 @@
 
 /* leaderboard */
 .leaderboard {
-	background: linear-gradient(to bottom, var(--clr-header-light), var(--bg-header));
+	background: linear-gradient(to bottom, var(--bg-header) 20%, var(--clr-header-light));
 }
 
 /* head */

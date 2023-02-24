@@ -15,14 +15,14 @@ const Apprentissage = ({ current }) => {
   return (
     <div className="tab">
       <div className="tab-header">
-        <div className={`tabs-option ${tab===0? 'selected':''}`}>
-          <span onClick={() => changeTab(0)}>Prerequis</span>
+        <div onClick={() => changeTab(0)} className={`tabs-option ${tab===0? 'selected':''}`}>
+          <span>Prerequis</span>
         </div>
-        <div className={`tabs-option ${tab===1? 'selected':''}`}>
-          <span onClick={() => changeTab(1)}>Lesson</span>
+        <div onClick={() => changeTab(1)} className={`tabs-option ${tab===1? 'selected':''}`}>
+          <span>Lesson</span>
         </div>
-        <div className={`tabs-option ${tab===2? 'selected':''}`}>
-          <span onClick={() => changeTab(2)}>Evaluation</span>
+        <div onClick={() => changeTab(2)} className={`tabs-option ${tab===2? 'selected':''}`}>
+          <span>Evaluation</span>
         </div>
       </div>
       <div className="tab-body">
