@@ -42,7 +42,6 @@ const Question = ({ quest, isSubmited, setScore }) => {
           : s,
       0
     );
-    console.log(score);
     if (isSubmited) setScore((prev) => prev + score);
   }, [isSubmited]);
 
