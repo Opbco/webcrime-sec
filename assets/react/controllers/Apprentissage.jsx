@@ -41,7 +41,7 @@ const Apprentissage = ({ current }) => {
       <div className="tab-body">
         <div
           className="tab-content"
-          style={{ display: tab === 0 ? "blocked" : "none" }}
+          style={{ display: tab === 0 ? "block" : "none" }}
         >
           <ul>
             {lesson.prerequis.map((prerequi, index) => (
